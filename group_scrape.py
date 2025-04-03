@@ -20,13 +20,14 @@ def get_group_members(group_id, output_file):
         else:
             url = None
     
-    with open(output_file, "w", encoding="utf-8") as file:
+    with open(output_file, "a", encoding="utf-8") as file:
         for member in members:
             file.write(member + "\n")
     
-    print(f"Successfully saved {len(members)} members to {output_file}")
+    print(f"Successfully appended {len(members)} members to {output_file}")
+    input("🛑 Press Enter to exit 🛑")
 
 if __name__ == "__main__":
-    group_id = input("⚠️ Enter the Roblox group ID: ")
+    group_id = input("️⚠️ Enter the Roblox group ID: ")
     output_file = "roblox_group_members.txt"
     get_group_members(group_id, output_file)
